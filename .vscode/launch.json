@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "clang++ - Build and debug for Mac",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${command:cmake.buildType}/app/program",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "make build",
+            "additionalSOLibSearchPath": "${workspaceFolder}/build/${command:cmake.buildType}/core;/lib64;/usr/lib",
+        },
+        {
+            "name": "clang++ - Gtest for Mac",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/${command:cmake.buildType}/tests/tests",
+            "args": ["--gtest_catch_exceptions=0"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "make build",
+            "additionalSOLibSearchPath": "${workspaceFolder}/build/${command:cmake.buildType}/core;/lib64;/usr/lib",
+        }
+    ]
+}
